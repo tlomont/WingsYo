@@ -51,4 +51,4 @@ for location, name  in locations.iteritems():
 
 for location in results:
     url = '''https://campusdining.princeton.edu/dining/_Foodpro/menuSamp.asp?myaction=read&sName=Princeton+UniversityCampus+Dining&dtdate='''+ month+'''%2F'''+day+'''%2F'''+year+'''&locationNum='''+location+'''&naFlag=1'''
-    requests.post('http://api.justyo.co/yoall', data={'api_token': os.environ.get("YOKEY"),'link': url}) # Send Yo to all
+    requests.post("https://api.justyo.co/yoall/", data={'api_token': os.environ.get("YOKEY"), 'link': url}) # Send Yo to all
