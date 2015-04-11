@@ -24,12 +24,19 @@ year = str(today.year)
 dayname = week[today.weekday()]
 hour = strftime("%H", localtime())
 
-if (hour == '10'):
-    mealindex = 0
-elif (hour == '11'):
-    mealindex = 1
+if (dayname == 'Saturday' or 'Sunday'):
+    if (hour == '10'):
+        mealindex = 0
+    else:
+        mealindex = 1
+        
 else:
-    mealindex = 2
+    if (hour == '10'):
+        mealindex = 0
+    elif (hour == '11'):
+        mealindex = 1
+    else:
+        mealindex = 2
 
 for location, name  in locations.iteritems():
     url = '''https://campusdining.princeton.edu/dining/_Foodpro/menuSamp.asp?myaction=read&sName=Princeton+UniversityCampus+Dining&dtdate='''+ month+'''%2F'''+day+'''%2F'''+year+'''&locationNum='''+location+'''&naFlag=1'''
